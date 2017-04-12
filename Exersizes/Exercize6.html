@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <!-- Bootstrap Styles -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+        <div class="jumbotron">
+			<h1 class="text-center">Add to List</h1>
+		</div>            
+        <form method="POST" action="Stats.php">
+			<div class="form-group">
+			    <label for="num">Number</label>
+                <input id="num" type="text" name="num[]" class="form-control"/>
+            </div>
+            <p><input type="submit" class="btn btn-primary" value="OK"></p>
+        </form>
+        </div>
+        <div id="numHolder">
+            
+        </div>
+        
+            
+        
+        <!-- Bootstrap JS -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+            
+        <script>
+            if($("#numHolder").val() === null){
+                $("#numHolder").setAttribute("hidden", true);
+            }else{
+                
+            }
+			
+			var count = 0;
+			$("input[value='before']").click(function () 
+			{
+				$("numHolder").before("<h2>New Item " + count + "</h2>");
+			});
+
+			$("input[value='after']").click(function () 
+			{
+				$("numHolder").after();
+			});
+		</script>
+        
+    </body>
+    
+</html>
